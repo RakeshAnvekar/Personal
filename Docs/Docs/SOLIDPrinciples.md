@@ -1,4 +1,4 @@
-# SOLID Principles in C# --- Complete Mastery Guide
+# SOLID Principles in C#
 
 A deep, interview-ready guide to mastering SOLID principles with C#
 examples, real-world scenarios, and senior-level insights.
