@@ -111,42 +111,91 @@ polymorphism
 
 # 3️⃣ Liskov Substitution Principle (LSP)
 
-> Derived classes must be substitutable for their base classes.
+> **LSP:** Derived classes must be substitutable for their base classes
+> without breaking behavior.
 
-## ❌ Bad Example
+
+------------------------------------------------------------------------
+
+## 🏦 Example 1 --- Payment Processing System
+
+### ❌ Bad Design (LSP Violation)
 
 ``` csharp
-public class Bird
+public abstract class PaymentMethod
 {
-    public virtual void Fly() { }
+    public abstract void Pay(decimal amount);
+    public virtual void Refund(decimal amount) { }
 }
 
-public class Ostrich : Bird
+public class CreditCardPayment : PaymentMethod
 {
-    public override void Fly()
+    public override void Pay(decimal amount) { }
+    public override void Refund(decimal amount) { }
+}
+
+public class CashOnDelivery : PaymentMethod
+{
+    public override void Pay(decimal amount) { }
+
+    public override void Refund(decimal amount)
     {
-        throw new NotImplementedException();
+        throw new NotSupportedException("Refund not supported");
     }
 }
 ```
 
-## ✅ Good Example
+**Problem:**
 
 ``` csharp
-public abstract class Bird { }
-
-public interface IFlyable
+void ProcessRefund(PaymentMethod payment)
 {
-    void Fly();
+    payment.Refund(100);
 }
 
-public class Sparrow : Bird, IFlyable
-{
-    public void Fly() { }
-}
-
-public class Ostrich : Bird { }
+ProcessRefund(new CashOnDelivery()); // 💥 Runtime crash
 ```
+
+`CashOnDelivery` cannot be safely substituted for `PaymentMethod`.
+
+------------------------------------------------------------------------
+
+### ✅ Good Design (LSP Compliant)
+
+``` csharp
+public abstract class PaymentMethod
+{
+    public abstract void Pay(decimal amount);
+}
+
+public interface IRefundable
+{
+    void Refund(decimal amount);
+}
+
+public class CreditCardPayment : PaymentMethod, IRefundable
+{
+    public override void Pay(decimal amount) { }
+    public void Refund(decimal amount) { }
+}
+
+public class CashOnDelivery : PaymentMethod
+{
+    public override void Pay(decimal amount) { }
+}
+```
+
+**Safe usage:**
+
+``` csharp
+void ProcessRefund(IRefundable payment)
+{
+    payment.Refund(100);
+}
+```
+
+------------------------------------------------------------------------
+
 
 ------------------------------------------------------------------------
 
