@@ -53,14 +53,7 @@ This means:
 
 # Memory Diagram
 
-Add the image you provided in the same folder as this README and name
-it:
 
-    struct-memory.png
-
-Then it will display like this:
-
-    ![Struct Value Type Memory](./struct-memory.png)
 
 ------------------------------------------------------------------------
 
