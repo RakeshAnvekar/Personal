@@ -106,13 +106,13 @@ Because `Employee` is a **value type**, the entire struct is **copied**.
 
     STACK
     -----------------
-    e
-    Salary : 5000
-    Age    : 23
-
     e1
     Salary : 5000
     Age    : 23
+    
+    e
+    Salary : 5000
+    Age    : 23    
 
 Now there are **two independent copies**.
 
@@ -128,17 +128,19 @@ Another copy is created.
 
     STACK
     -----------------
+    e2
+    Salary : 5000
+    Age    : 23
+    
+    e1
+    Salary : 5000
+    Age    : 23
+    
     e
     Salary : 5000
     Age    : 23
 
-    e1
-    Salary : 5000
-    Age    : 23
-
-    e2
-    Salary : 5000
-    Age    : 23
+    
 
 Each variable now has **separate memory**.
 
@@ -154,17 +156,19 @@ Only `e` is modified.
 
     STACK
     -----------------
-    e
-    Salary : 5000
-    Age    : 25
-
-    e1
-    Salary : 5000
-    Age    : 23
-
     e2
     Salary : 5000
     Age    : 23
+    
+    e1
+    Salary : 5000
+    Age    : 23
+    
+    e
+    Salary : 5000
+    Age    : 25  
+
+    
 
 Because `e1` and `e2` were **copied earlier**, their values remain
 unchanged.
@@ -194,9 +198,10 @@ In this example:
 
     STACK
     -----------------
-    e
-    e1
     e2
+    el
+    e
+
 
 No heap allocation occurs because **no class objects are created**.
 
