@@ -20,26 +20,28 @@
 | **Large Objects**    | Large structs may move to **heap** causing performance issues | Designed for **large complex objects**                                                                                                             |
 
 ---
+## When to Use Structs in C#
 
-### Quick Summary
+- Structs are best used when you need to represent **simple data types**, such as integers, strings, or other basic data types.
 
-| Struct          | Class                |
-| --------------- | -------------------- |
-| Value type      | Reference type       |
-| Stored on stack | Stored on heap       |
-| Copied by value | Copied by reference  |
-| No inheritance  | Supports inheritance |
-| Lightweight     | Heavier              |
+- They are useful when working with **large datasets**, such as **arrays or lists**, where performance is critical.
 
+- Use a struct when you need to pass a **small amount of data to a method** and want to avoid the overhead of passing a reference to a class.
+
+- Structs are useful when you need a **lightweight object that does not require inheritance or polymorphism**.
+
+- Since structs are **value types**, they can be easily copied and passed around without complex memory management.
 
 ---
 
-### Quick Summary
+## When to Use Classes in C#
 
-| Struct | Class |
-|------|------|
-| Value type | Reference type |
-| Stored on stack | Stored on heap |
-| Copied by value | Copied by reference |
-| No inheritance | Supports inheritance |
-| Lightweight | Heavier |
+- Classes are best used when you need to represent **complex objects**, such as **real-world entities** like cars, people, or animals.
+
+- They are useful when creating **object hierarchies**, where one class **inherits from another**.
+
+- Use classes when working with **large amounts of data**, such as when interacting with a **database or other external data sources**.
+
+- Classes are useful when you need to **encapsulate data and functionality together**.
+
+- By using classes, you can group **related methods and properties into a single unit**, making code more organized and easier to maintain.
