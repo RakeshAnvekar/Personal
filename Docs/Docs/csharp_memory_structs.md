@@ -160,6 +160,11 @@ Output:
 5.  Copying structs increases **memory usage because full data is
     copied**.
 
+**Note:** A `StackOverflowException` occurs when the stack memory is exhausted.  
+This usually happens due to deep or infinite recursion, which continuously allocates stack frames until the stack limit is reached.
+
+In C# / .NET, you usually cannot directly check the exact available stack memory at runtime like you can with heap memory. The stack is managed by the OS and CLR, and its size is fixed per thread. However, there are some ways to estimate or configure it.
+
 ------------------------------------------------------------------------
 
 # Summary
