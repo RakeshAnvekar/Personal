@@ -12,5 +12,10 @@
 
 - 🧭 [Memory Concepts for Value Types](Docs/csharp_memory_structs.md)  
   A detailed explanation of how memory works in C# for value types, including stack allocation, struct size, and how memory is calculated based on the variables inside the struct.
+
+- 🧭 [Refreece Type](Docs/csharp_stack_heap_reference_readme.md)  
+  This document explains how **reference types (classes)** behave in
+  memory and why the .NET runtime uses **stack and heap memory** for
+  efficient memory management.
  
  
