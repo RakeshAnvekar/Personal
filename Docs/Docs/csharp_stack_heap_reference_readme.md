@@ -35,7 +35,7 @@ class Program
     }
 }
 ```
-
+![alt text](image-1.png)
 ------------------------------------------------------------------------
 
 # Step‑by‑Step Memory Explanation
