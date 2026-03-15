@@ -227,26 +227,7 @@ class Employee
 
 # Quick Summary Table
 
-  ----------------------------------------------------------------------------
-  Modifier    Same Class    Derived Class    Same Assembly   Different
-                                                             Assembly
-  ----------- ------------- ---------------- --------------- -----------------
-  Public      ✔             ✔                ✔               ✔
-
-  Private     ✔             ❌               ❌              ❌
-
-  Protected   ✔             ✔                ❌              ❌
-
-  Internal    ✔             ✔                ✔               ❌
-
-  Protected   ✔             ✔                ✔               ✔ (derived only)
-  Internal                                                   
-
-  Private     ✔             ✔ (same          ✔               ❌
-  Protected                 assembly)                        
-  ----------------------------------------------------------------------------
-
-------------------------------------------------------------------------
+![alt text](image-3.png)
 
 # Class-Level Modifiers
 
