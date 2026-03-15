@@ -20,3 +20,10 @@
  
 - 🧭 [Value type vs Refernce type](Docs/Diffrence.md)
 - 🧭[Struct vs class](Docs/Struct_ClassDiffrence.md)
+
+--------------------------------------------------------Part 2--------------------------------------------------------------
+
+- 🧭 [Access Modifiers](Docs/csharp-access-modifiers.md)
+
+  Explains different C# access modifiers such as `public`, `private`, `protected`, `internal`, `protected internal`, and `private protected`.  
+  Covers how they control visibility of classes and members across classes, namespaces, and assemblies.
